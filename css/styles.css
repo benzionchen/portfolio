@@ -179,11 +179,12 @@ img {
 }
 
 .hero-copy {
-    min-width: 0;
+    min-width: 0px;
 }
 
 .subhead {
     max-width: 48ch;
+    margin-left: 24px;
 }
 
 .hero-headshot {
