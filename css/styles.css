@@ -292,6 +292,17 @@ img {
     font-size: 13px;
 }
 
+.pill strong {
+    font-weight: 700;
+    color: var(--text);
+}
+
+.pill .pill-value {
+    color: var(--muted);
+    /* or var(--text) if you want the value darker */
+    font-weight: 500;
+}
+
 
 .section {
     padding: 56px 0;
