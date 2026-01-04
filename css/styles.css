@@ -396,6 +396,12 @@ img {
     line-height: 1.45;
 }
 
+.card-stack {
+    margin: 0 0 4px;
+    color: var(--muted);
+    line-height: 1.45;
+}
+
 .card-links {
     display: flex;
     gap: 10px;
