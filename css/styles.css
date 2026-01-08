@@ -1,4 +1,4 @@
-/* copying apple.come style */
+/* copying apple.com style */
 
 :root {
     --bg: #ffffff;
@@ -23,7 +23,8 @@ html {
 
 body {
     margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
     color: var(--text);
     background: var(--bg);
     -webkit-font-smoothing: antialiased;
@@ -45,13 +46,15 @@ img {
 }
 
 .container {
-    width: min(var(--max), calc(100% - 2*var(--pad)));
+    width: min(var(--max), calc(100% - 2 * var(--pad)));
     margin: 0 auto;
 }
 
 .hairline {
     border-top: 1px solid var(--hairline);
 }
+
+/* ---------------- Nav ---------------- */
 
 .nav {
     position: sticky;
@@ -94,22 +97,6 @@ img {
     background: rgba(0, 0, 0, 0.04);
 }
 
-.cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 14px;
-    border-radius: 999px;
-    background: var(--text);
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.cta:hover {
-    opacity: 0.92;
-}
-
 .mobile-btn {
     display: none;
     border: 1px solid var(--hairline);
@@ -134,6 +121,42 @@ img {
     color: var(--text);
 }
 
+/* ---------------- Buttons ---------------- */
+
+.cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: var(--text);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.cta:hover {
+    opacity: 0.92;
+}
+
+.secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--hairline);
+    color: var(--text);
+    font-weight: 600;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.secondary:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+/* ---------------- Hero ---------------- */
+
 .hero {
     padding: 72px 0 28px;
 }
@@ -142,7 +165,7 @@ img {
     color: var(--muted);
     font-size: 15px;
     letter-spacing: 0.01em;
-    margin-bottom: 12px;
+    margin: 0 0 12px;
 }
 
 .h1 {
@@ -172,19 +195,23 @@ img {
 .hero-top {
     display: grid;
     grid-template-columns: minmax(0, 560px) 1fr;
-    /* left column capped */
     gap: 28px;
     align-items: start;
     margin-bottom: 18px;
 }
 
 .hero-copy {
-    min-width: 0px;
+    min-width: 0;
 }
 
-.subhead {
-    max-width: 48ch;
+/* if you want only hero paragraphs indented, keep this */
+.hero-copy .subhead {
     margin-left: 24px;
+}
+
+/* keep the title aligned (no indent) */
+.hero-copy .h1 {
+    margin-left: 0;
 }
 
 .hero-headshot {
@@ -193,41 +220,26 @@ img {
     align-items: flex-start;
 }
 
-/* shaping the portrait image dimensions */
+/* portrait image */
 .hero-headshot img {
     width: min(320px, 100%);
     aspect-ratio: 1 / 1;
     object-fit: cover;
-
     border-radius: 999px;
-    /* circle */
     border: 1px solid rgba(0, 0, 0, 0.10);
     box-shadow: 0 18px 55px rgba(0, 0, 0, 0.12);
     background: #fff;
-    transform: translate(-80px, 30px)
+    transform: translate(-80px, 30px);
 }
 
-.secondary {
-    display: inline-flex;
-    align-items: center;
-    padding: 10px 14px;
-    border-radius: 999px;
-    border: 1px solid var(--hairline);
-    color: var(--text);
-    font-weight: 600;
-    font-size: 14px;
-    background: rgba(255, 255, 255, 0.7);
-}
-
-.secondary:hover {
-    background: rgba(0, 0, 0, 0.03);
-}
-
+/* hero card */
 .hero-card {
     margin-top: 28px;
     border-radius: var(--radius);
     border: 1px solid var(--hairline);
-    background: linear-gradient(180deg, rgba(245, 245, 247, 0.9), rgba(255, 255, 255, 0.9));
+    background: linear-gradient(180deg,
+            rgba(245, 245, 247, 0.9),
+            rgba(255, 255, 255, 0.9));
     box-shadow: var(--shadow);
     overflow: hidden;
 }
@@ -238,6 +250,7 @@ img {
     gap: 0;
 }
 
+/* left media panel */
 .hero-media {
     min-height: 260px;
     background:
@@ -247,29 +260,19 @@ img {
     position: relative;
 }
 
-/* this is causing transparent film over the image
-.hero-media::after {
-    content: "";
-    position: absolute;
-    inset: 26px;
-    border-radius: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    background: rgba(255, 255, 255, 0.65);
-} */
-
+/* inset preview image */
 .hero-preview {
     position: absolute;
     inset: 26px;
-    /* matches nice inset panel */
     width: calc(100% - 52px);
     height: calc(100% - 52px);
     object-fit: cover;
-    /* use 'contain' if don't want cropping */
     border-radius: 20px;
     border: 1px solid rgba(0, 0, 0, 0.06);
     background: rgba(255, 255, 255, 0.65);
 }
 
+/* right meta panel */
 .hero-meta {
     padding: 22px;
     border-left: 1px solid var(--hairline);
@@ -279,6 +282,7 @@ img {
     gap: 10px;
 }
 
+/* pills */
 .pill {
     display: inline-flex;
     align-items: center;
@@ -297,12 +301,7 @@ img {
     color: var(--text);
 }
 
-.pill .pill-value {
-    color: var(--muted);
-    /* or var(--text) if you want the value darker */
-    font-weight: 500;
-}
-
+/* ---------------- Sections ---------------- */
 
 .section {
     padding: 56px 0;
@@ -320,6 +319,8 @@ img {
     max-width: 70ch;
     line-height: 1.5;
 }
+
+/* ---------------- Grid / Cards ---------------- */
 
 .grid {
     display: grid;
@@ -342,43 +343,43 @@ img {
     box-shadow: 0 18px 55px rgba(0, 0, 0, 0.10);
 }
 
+/* card header media */
 .card-media {
     height: 200px;
     overflow: hidden;
     border-bottom: 1px solid var(--hairline);
-    border-top-left-radius: var(--radius);
-    border-top-right-radius: var(--radius);
     position: relative;
 
-    /* fallback background (shows if image is missing) */
+    /* fallback background if image missing */
     background:
         radial-gradient(900px 320px at 10% 0%, rgba(52, 199, 89, 0.14), transparent 55%),
         radial-gradient(900px 320px at 90% 30%, rgba(0, 122, 255, 0.12), transparent 60%),
         linear-gradient(180deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.00));
 }
 
+/* make sure image fills nicely */
 .card-media img {
     width: 100%;
     height: 100%;
     display: block;
     object-fit: cover;
-    object-position: center;
+    object-position: left center;
+    position: relative;
+    z-index: 0;
 }
 
-/* gradient overlay ON TOP of the image */
+/* gradient overlay on top of image */
 .card-media::after {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
-
-    /* same gradient vibe, but lighter so the image still shows */
+    z-index: 1;
     background:
         radial-gradient(900px 320px at 10% 0%, rgba(52, 199, 89, 0.12), transparent 55%),
         radial-gradient(900px 320px at 90% 30%, rgba(0, 122, 255, 0.10), transparent 60%),
         linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.00));
 }
-
 
 .card-body {
     padding: 18px 18px 20px;
@@ -402,6 +403,11 @@ img {
     line-height: 1.45;
 }
 
+.card-stack strong {
+    color: var(--text);
+    font-weight: 700;
+}
+
 .card-links {
     display: flex;
     gap: 10px;
@@ -422,13 +428,16 @@ img {
     background: rgba(0, 0, 0, 0.03);
 }
 
+/* ---------------- Footer ---------------- */
+
 .footer {
     padding: 34px 0 50px;
     color: var(--muted);
     font-size: 13px;
 }
 
-/* scroll reveal */
+/* ---------------- Scroll reveal ---------------- */
+
 .reveal {
     opacity: 0;
     transform: translateY(18px);
@@ -441,26 +450,14 @@ img {
     transform: translateY(0);
 }
 
-/* parallax helper (optional) */
+/* optional parallax helper */
 [data-parallax] {
     transform: translateY(var(--py, 0px));
 }
 
-/* responsive */
+/* ---------------- Responsive ---------------- */
+
 @media (max-width: 640px) {
-    .hero-card-inner {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-meta {
-        border-left: 0;
-        border-top: 1px solid var(--hairline);
-    }
-
-    .card {
-        grid-column: span 12;
-    }
-
     .nav-links {
         display: none;
     }
@@ -477,13 +474,30 @@ img {
         grid-template-columns: 1fr;
     }
 
+    .hero-copy .subhead {
+        margin-left: 0;
+    }
+
     .hero-headshot {
         justify-content: center;
     }
 
     .hero-headshot img {
         width: 220px;
-        transform: translateY(0);
+        transform: none;
+    }
+
+    .hero-card-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-meta {
+        border-left: 0;
+        border-top: 1px solid var(--hairline);
+    }
+
+    .card {
+        grid-column: span 12;
     }
 }
 
