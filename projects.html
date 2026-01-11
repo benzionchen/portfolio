@@ -14,7 +14,8 @@
             <a class="brand" href="index.html">Ben Chen</a>
             <nav class="nav-links" aria-label="Primary">
                 <a href="projects.html">Projects</a>
-                <a href="about.html">About</a>
+                <!-- <a href="about.html">About</a> -->
+                <!-- REMOVING ABOUT page for no because not yet finished -->
                 <!-- <a href="contact.html">Contact</a> -->
                 <!-- <a class="cta" href="contact.html">Let’s talk</a> -->
             </nav>
@@ -30,14 +31,22 @@
     <main class="section">
         <div class="container">
             <h1 class="h1 reveal" style="font-size:clamp(34px,4vw,52px)">Other Projects</h1>
-            <p class="section-desc reveal">Placeholder</p>
+            <!-- <p class="section-desc reveal">Placeholder</p> -->
 
             <div class="grid">
                 <article class="card reveal">
-                    <div class="card-media"></div>
+                    <div class="card-media">
+                        <img src="assets/img/SP500_IMG.png" alt="SP500 Trading Bot preview">
+                    </div>
                     <div class="card-body">
                         <h3 class="card-title">Project Three</h3>
-                        <p class="card-text">Under construction</p>
+                        <p class="card-text">Built an end-to-end time series ML baseline to predict next-day S&P 500
+                            direction using historical OHLCV data pulled via yfinance. Defined a
+                            forward-looking label, engineered multi-horizon momentum features, then evaluated a Random
+                            Forest model using walk-forward backtesting</p>
+                        <p class="card-stack"><strong> Stack: </strong> Python, pandas, scikit-learn, NumPy, matplotlib,
+                            yfinance
+                        </p>
                         <div class="card-links">
                             <!-- <a href="#" target="_blank" rel="noopener">Live</a> -->
                             <!-- <a href="#" target="_blank" rel="noopener">Code</a> -->
@@ -46,10 +55,15 @@
                 </article>
 
                 <article class="card reveal">
-                    <div class="card-media"></div>
+                    <div class="card-media">
+                        <img src="assets/img/maze solver_IMG.png" alt="Maze Solver preview">
+                    </div>
                     <div class="card-body">
-                        <h3 class="card-title">Project Four</h3>
-                        <p class="card-text">Under construction</p>
+                        <h3 class="card-title">Dijkstra's Algorithm Maze Solver</h3>
+                        <p class="card-text">Implemented a grid-graph maze solver in C++. I preprocess traversable cells
+                            with Union-Find to quickly check if a solution exists, then run Dijkstra to find the
+                            shortest path from S to E. The solver reconstructs the route via parent pointers and writes
+                            an annotated maze output file</p>
                         <div class="card-links">
                             <!-- <a href="#" target="_blank" rel="noopener">Live</a> -->
                             <!-- <a href="#" target="_blank" rel="noopener">Code</a> -->
