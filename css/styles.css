@@ -368,6 +368,42 @@ img {
     z-index: 0;
 }
 
+.card-media--left img {
+    object-position: left center;
+}
+
+/* Only for the Dijkstra card image area */
+.card-media--rounded {
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    overflow: hidden;
+    /* critical: clips image + overlay */
+}
+
+/* Make sure the gradient overlay is rounded too */
+.card-media--rounded::after {
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+
+/* if want to see the whole image (no crop) */
+.card-media--contain img {
+    object-fit: contain;
+    object-position: center;
+}
+
+/* give contain-images a little more vertical space */
+.card-media--tall {
+    height: 200px;
+    /* tweak to 220/260 depending on the image */
+}
+
+/* tone down the gradient overlay on contain images */
+.card-media--contain::after {
+    opacity: 0.25;
+    /* lower = clearer image */
+}
+
 /* gradient overlay on top of image */
 .card-media::after {
     content: "";
@@ -379,6 +415,24 @@ img {
         radial-gradient(900px 320px at 10% 0%, rgba(52, 199, 89, 0.12), transparent 55%),
         radial-gradient(900px 320px at 90% 30%, rgba(0, 122, 255, 0.10), transparent 60%),
         linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.00));
+}
+
+.dijkstra-media {
+    padding: 14px;
+    /* creates an inset so rounding is visible */
+}
+
+.dijkstra-media img {
+    border-radius: 16px;
+    /* rounds the image itself */
+}
+
+/* Make the overlay follow the same inset + rounding (so it doesn't look square) */
+.dijkstra-media::after {
+    inset: 14px;
+    border-radius: 16px;
+    opacity: 0.18;
+    /* optional: makes the image clearer */
 }
 
 .card-body {
